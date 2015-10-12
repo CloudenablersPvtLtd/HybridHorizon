@@ -1,0 +1,46 @@
+{% load i18n sizeformat parse_date %}
+{% load url from future %}
+
+<h3>{% trans "Volume Overview" %}</h3>
+
+<div class="info row-fluid detail">
+  <h4>{% trans "Info" %}</h4>
+  <hr class="header_rule">
+  <dl>
+    <dt>{% trans "Name" %}</dt>
+    <dd>{{ volume.metadata.name }}</dd>
+    
+    <dt>{% trans "ID" %}</dt>
+    <dd>{{ volume.instanceId }}</dd>
+    
+    {% if volume.metadata.description %}
+    <dt>{% trans "Description" %}</dt>
+    <dd>{{ volume.metadata.description }}</dd>
+    {% endif %}
+    <dt>{% trans "Status" %}</dt>
+    <dd>{{ volume.attributes.instanceStatus }}</dd>
+  </dl>
+</div>
+
+<div class="specs row-fluid detail">
+  <h4>{% trans "Specs" %}</h4>
+  <hr class="header_rule">
+  <dl>
+    <dt>{% trans "Size" %}</dt>
+    <dd>{{ volume.parameters.sizeInGBytes}} {% trans "GB" %}</dd>
+    <dt>{% trans "Created" %}</dt>
+    <dd>{{ volume.created }}</dd>
+  </dl>
+</div>
+
+
+<div class="status row-fluid detail">
+  <h4>{% trans "Metadata" %}</h4>
+  <hr class="header_rule">
+  <dl>
+  {% for key, value in volume.metadata.items %}
+    <dt>{{ key }}</dt>
+    <dd>{{ value }}</dd>
+  {% endfor %}
+  </dl>
+</div>-->

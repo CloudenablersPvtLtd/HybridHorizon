@@ -1,0 +1,12 @@
+{% extends 'amazon/base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Associate Address" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Associate") %}
+{% endblock page_header %}
+
+{% block main %}
+  {% include 'amazon/elastice_ip/_associate.html' %}
+{% endblock %}
+

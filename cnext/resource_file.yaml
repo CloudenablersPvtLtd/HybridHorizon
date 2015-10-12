@@ -1,0 +1,187 @@
+﻿#YAML
+
+START_STOP_PROVIDERS:
+  -
+    - cloudcentral
+    - australia-canberra-2
+  -
+    - cloudsigma
+    - csregionlasvegas
+  -
+    - cloudsigma
+    - washington
+  -
+    - cloudsigma
+    - zurich
+  -
+    - gmocloud
+    - japan
+  -
+    - gmocloud
+    - malaysia
+  -
+    - gmocloud
+    - us
+  -
+    - gogrid
+    - eu-west-1
+  -
+    - gogrid
+    - us-east-1
+  -
+    - gogrid
+    - us-west-1
+  -
+    - greenqloud
+    - is-1
+  -
+    - hegerys
+    - computenext
+  -
+    - internap
+    - amsterdam
+  -
+    - internap
+    - dallas
+  -
+    - servercentral
+    - chicago
+  -
+    - softlayer
+    - amsterdam
+  -
+    - softlayer
+    - dallas
+  -
+    - softlayer
+    - seattle
+  -
+    - softlayer
+    - singapore
+  -
+    - softlayer
+    - washington_dc
+  -
+    - rackscale
+    - computenext
+  -
+    - exoscale
+    - ch-gv2
+  -
+    - singlehop
+    - chicago
+  -
+    - upcloud
+    - finland
+  -
+    - upcloud
+    - london
+  -
+    - cirrus
+    - canada
+  -
+    - netplan
+    - computenext
+  -
+    - cacloud
+    - canada
+  -
+    - cacloud
+    - toronto
+  -
+    - cloudiro
+    - singapore
+  -
+    - cloudiro
+    - us
+  -
+    - cloudprovider
+    - amsterdam
+  -
+    - gandi
+    - france
+  -
+    - gandi
+    - luxembourg
+  -
+    - gandi
+    - us
+  -
+    - brightbox
+    - uk-zonea
+  -
+    - brightbox
+    - uk-zoneb
+  -
+    - proisp
+    - norway
+  -
+    - interoute
+    - paris
+  -
+    - computerline
+    - hongkong
+  -
+    - nephoscale
+    - ric-1
+  -
+    - nephoscale
+    - sjc-1
+  -
+    - pcextreme
+    - ams
+provider_keypairs_choices:
+  - hpcloud
+provider_sg_choices:
+  - cloudcentral
+  - brightbox
+provider_volume_choices:
+  - interoute
+  - brightbox
+  - gandi
+  - netplan
+  - hpcloud
+  - upcloud
+  - rackscale
+  - servercentral
+  - hegerys
+  - greenqloud
+  - gmocloud
+  - cloudsigma
+  - cloudcentral
+region_keypairs_choices:
+  - nova
+  - AZ1
+  - AZ2
+region_sg_choices:
+  - nova
+  - AZ1
+  - AZ2
+  - Montreal
+  - is-1
+  - australia-canberra-2
+  - UK-ZoneA
+  - UK-ZoneB
+region_volume_choices:
+  - Paris
+  - UK-ZoneA
+  - UK-ZoneB
+  - ComputeNext
+  - nova
+  - AZ1
+  - AZ2
+  - Finland
+  - London
+  - France
+  - Luxembourg
+  - US
+  - computenext
+  - Chicago
+  - ComputeNext
+  - is-1
+  - Japan
+  - Malaysia
+  - US
+  - Washington
+  - csregionlasvegas
+  - australia-canberra-2

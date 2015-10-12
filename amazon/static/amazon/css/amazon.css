@@ -1,0 +1,37 @@
+/* Additional CSS for amazon. */
+
+div.pager {
+	padding: 5px 0 5px 0;
+	background-color: #D6D2C2;
+	text-align: center;
+	width: auto;
+	height: auto;
+}
+
+div.pager img {
+	width: 30px;
+	height: 25px;
+	margin-right: 5px;
+	margin-left: 5px;
+	vertical-aligh: middle;
+}
+
+div.pager input.pagedisplay {
+	width: 50px;
+	line-height: 25px;
+	border: 1px solid #330000;
+	margin-right: 5px;
+	margin-left: 5px;
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+div.pager select.pagesize {
+	width: 50px;
+	line-height: 25px;
+	margin-right: 5px;
+	margin-left: 5px;
+	border: 1px solid #330000;
+	text-align: center;
+	margin-bottom: 0px;
+}

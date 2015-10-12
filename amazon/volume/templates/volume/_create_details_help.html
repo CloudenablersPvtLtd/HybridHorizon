@@ -1,0 +1,10 @@
+{% load i18n %}
+
+{% block help_message %}
+    <h3>{% trans "Description" %}:</h3>
+    <p>{% trans "Minimum Size of Volume creation allowed is 1 GiB for Standard and 10GiB for IOPS" %}</p>
+    <p>{% trans "Maximum Size of Volume creation allowed is 1024 GiB" %}</p>
+    <p>{%trans "Minimum IOPS Value is 100" %}</p>
+    <p>{%trans "Maximum IOPS Value is 4000" %}</p>
+    <p>{% trans "IOPS should be specified for IOP Volume type" %}</p>
+{% endblock %}

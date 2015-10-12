@@ -1,0 +1,84 @@
+{% load i18n sizeformat %}
+{% load url from future %}
+
+<h3>{% trans "Instance Overview" %}</h3>
+
+<div class="status row-fluid detail">
+  <h4>{% trans "Info" %}</h4>
+  <hr class="header_rule">
+  <table cellpadding="10" cellspacing="5">
+    <tr>
+        <td><b>{% trans "Name" %}</b> </td>
+        <td>{{ instance.metadata.name }}</td>
+         <td><b>{% trans "ID" %}</b></td>
+        <td>{{ instance.instanceId }}</td>
+    </tr>
+    <tr>
+        <td><b>{% trans "Provider" %}</b></td>
+        <td>{{ instance.provider }}</td>
+        <td><b>{% trans "Region" %}</b></td>
+        <td>{{ instance.region }}</td>
+        <td><b>{% trans "Status" %}</b></td>
+        <td>{{ instance.attributes.instanceStatus}}</td>
+    </tr>
+    <tr>
+        <td><b>{% trans "Created" %}</b></td>
+        <td>{{ instance.created|parse_isotime }}</td>
+        <td><b>{% trans "Uptime" %}</b></td>
+        <td>{{ instance.created|parse_isotime|timesince }}</td>
+    </tr>
+  </table>
+</div>
+
+<div class="specs row-fluid detail">
+  <h4>{% trans "Specs" %}</h4>
+  <hr class="header_rule">
+  <table cellpadding="10" cellspacing="5">
+    <tr>
+        <td><b>{% trans "CPU Speed" %}</b> </td>
+        <td>{{ instance.parameters.cpuSpeed }}</td>
+        <td><b>{% trans "RAM" %}</b></td>
+        <td>{{ instance.parameters.ram}}{% trans "GB" %}</td>
+    </tr>
+    <tr>
+        <td><b>{% trans "VCPUs" %}</b></td>
+        <td>{{ instance.parameters.cpuCount }} {% trans "VCPU" %}</td>
+        <td><b>{% trans "Local Storage" %}</b></td>
+        <td>{{ instance.parameters.localStorage }}{% trans "GB" %}</td>
+    </tr>
+   </table>
+</div>
+
+<div class="addresses row-fluid detail">
+  <h4>{% trans "IP Addresses" %}</h4>
+  <table cellpadding="10" cellspacing="5">
+  <hr class="header_rule">
+     <tr>
+        <td><b>{% trans "Public IP Address" %}</b></td>
+        <td>{{instance.attributes.publicIpAddress}}</td>
+        <td><b>{% trans "Private IP Address" %} </b></td>
+        <td>{{instance.attributes.privateIpAddress}}</td>
+        <td><b>{% trans "Password" %}</b></td>
+        <td>{{instance.attributes.password}}</td>
+        
+    </tr>
+  </table>
+</div>
+
+<div class="security_groups row-fluid detail">
+  <h4>{% trans "Security Groups And Keypair" %}</h4>
+  <table cellpadding="10" cellspacing="5">
+  <hr class="header_rule">
+     <tr>
+        <td><b>{% trans "Security Group ID" %}</b> </td>
+        <td>{{ instance.parameters.securityGroupIds}}</td>
+    </tr>
+    <tr>
+        <td><b>{% trans "KeyPair ID" %}</b></td>
+        <td>{{ instance.parameters.keyPairId}}</td>
+    </tr>
+  </table>
+</div>
+
+
+

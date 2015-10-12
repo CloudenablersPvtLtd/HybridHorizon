@@ -1,0 +1,37 @@
+{% load i18n sizeformat parse_date %}
+{% load url from future %}
+
+<h3>{% trans "Snapshot Overview" %}</h3>
+
+<div class="info row-fluid detail">
+  <h4>{% trans "Info" %}</h4>
+  <hr class="header_rule">
+    <table cellpadding="10" cellspacing="5">
+    <tr>
+        <td><b>{% trans "Name" %}</b> </td>
+        <td>{{ snapshot.tags.Name }}</td>
+         <td><b>{% trans "ID" %}</b></td>
+        <td>{{ snapshot.id }}</td>
+        <td><b>{% trans "Volume ID" %}</b></td>
+        <td>{{ snapshot.volume_id }}</td>
+    </tr>
+    <tr>
+        <td><b>{% trans "Description" %}</b></td>
+        <td>{{ snapshot.description }}</td>
+        <td><b>{% trans "Capcity (GB)" %}</b></td>
+        <td>{{ snapshot.volume_size }}</td>
+    </tr>
+    <tr>
+    	<td><b>{% trans "Start Time" %}</b></td>
+	    <td>{{ snapshot.start_time }}</td>
+        <td><b>{% trans "Region" %}</b></td>
+        <td>{{ snapshot.region.name }}</td>
+    </tr>
+    <tr>
+    	<td><b>{% trans "Status" %}</b></td>
+	    <td>{{ snapshot.status }}</td>
+	    <td><b>{% trans "Progress" %}</b></td>
+	    <td>{{ snapshot.progress }}</td>
+	</tr>
+  </table>
+</div>

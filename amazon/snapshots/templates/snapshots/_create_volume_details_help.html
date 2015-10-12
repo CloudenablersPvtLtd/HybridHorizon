@@ -1,0 +1,9 @@
+{% load i18n %}
+
+{% block help_message %}
+    <h3>{% trans "Description" %}:</h3>
+    <p>{% trans "Volume Size Min: Size of Snapshot, Max: 1024GiB" %}</p>
+    <p>{%trans "IOPS Min: 100 IOPS, Max: 4000 IOPS" %}</p>
+    <p>{% trans "IOPS should be specified for IOP Volume type" %}</p>
+    <p>{% trans "If Volume Type is IOPS, then Minimum volume size is 10GiB" %}</p>
+{% endblock %}

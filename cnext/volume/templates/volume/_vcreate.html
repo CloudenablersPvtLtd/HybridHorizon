@@ -1,0 +1,29 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block form_id %}attach_volume_form{% endblock %}
+{% block form_action %}{% url 'horizon:cnext:volume:attach' volume_id volume_name volume_provider %}{% endblock %}
+{% comment %}{% block form_class %}{{ block.super }} horizontal {% if show_attach %}split_half{% else %} no_split{% endif %}{% endblock %}{% endcomment %}
+
+{% block modal_id %}attach_volume_modal{% endblock %}
+{% block modal-header %}{% trans "Attach volume" %}{% endblock %}
+
+{% block modal-body %}
+<div class="left">
+    <fieldset>
+    {% include "horizon/common/_form_fields.html" %}
+    </fieldset>
+</div>
+<div class="right">
+    <h3>{% trans "Description" %}:</h3>
+    <h4>{% trans "Volumes" %}:</h4>	
+    <p>{% trans " Volume Attachment." %}</p>
+   
+</div>
+{% endblock %}
+
+{% block modal-footer %}
+  <input class="btn btn-primary pull-right" type="submit" value="{% trans "Attach Volume" %}" />
+  <a href="{% url 'horizon:cnext:volume:index' %}" class="btn secondary cancel close">{% trans "Cancel" %}</a>
+{% endblock %}

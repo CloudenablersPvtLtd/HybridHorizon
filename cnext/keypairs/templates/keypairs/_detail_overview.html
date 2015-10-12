@@ -1,0 +1,22 @@
+{% load i18n sizeformat %}
+
+<h3>{% trans "Keypair Overview" %}</h3>
+
+<div class="info row-fluid detail">
+  <h4>{% trans "Info" %}</h4>
+  <hr class="header_rule">
+  <dl>
+    <dt>{% trans "Name" %}</dt>
+    <dd>{{ keypairs.metadata.name }}</dd>
+    <dt>{% trans "Provider" %}</dt>
+    <dd>{{keypairs.provider}}</dd>
+    <dt>{% trans "Region" %}</dt>
+    <dd>{{keypairs.region}}</dd>
+    <dt>{% trans "InstanceID" %}</dt>
+    <dd>{{keypairs.instanceId}}</dd>
+    <dt>{% trans "Zone" %}</dt>
+    <dd>{{ keypairs.parameters.zone }}</dd>
+    <dt>{% trans "Status" %}</dt>
+    <dd>{{keypairs.attributes.instanceStatus}}</dd>
+  </dl>
+</div>

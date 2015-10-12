@@ -1,0 +1,13 @@
+{% extends 'cnext/base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Workload" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Workload") %}
+{% endblock page_header %}
+
+{% block cnext_main %}
+{{ table.render }}
+{% endblock %}
+
+

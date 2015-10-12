@@ -1,0 +1,40 @@
+{% load i18n sizeformat %}
+
+<h2><b>{% trans "SecurityGroups Overview" %}</b></h2>
+
+<div class="data row-fluid detail">
+  <h3><b>{% trans "DATA" %}</b></h3>
+  <hr class="header_rule">
+  
+   <table cellpadding="10" cellspacing="5">
+    <tr>
+        <td><b>{% trans "Name" %}</b> </td>
+        <td>{{ securitygroups.metadata.name}}</td>
+         <td><b>{% trans "InstanceID"  %}</b></td>
+        <td>{{ securitygroups.instanceId }}</td>
+    </tr>
+    <tr>
+        <td><b>{% trans "Provider" %}</b></td>
+        <td>{{  securitygroups.provider }}</td>
+        <td><b>{% trans "Region" %}</b></td>
+        <td>{{  securitygroups.region }}</td>
+        <td><b>{% trans "Zone" %}</b></td>
+        <td>{{  securitygroups.parameters.zone }}</td>
+        <td><b>{% trans "Status" %}</b></td>
+        <td>{{  securitygroups.attributes.instanceStatus}}</td>
+    </tr>
+    <tr>
+        <td><b>{%trans "Rules" %}</b></td>
+        <td>
+           {% for rule in securitygroups.attributes.rules %}
+              {% for key,value in rule.items %}
+           <h4><td>{{key}}  : {{ value }} <br> </td></h4>
+       </td>
+      {% endfor %}
+    {% endfor %}
+   </tr>
+    
+    </table>
+</div>
+
+

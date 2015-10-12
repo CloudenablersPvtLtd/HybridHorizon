@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block css %}
+  {% include "_stylesheets.html" %}
+
+  {% load compress %}
+  {% compress css %}
+  <link href='{{ STATIC_URL }}cnext/css/cnext.css' type='text/css' media='screen' rel='stylesheet' />
+  {% endcompress %}
+{% endblock %}
+
+{% block sidebar %}
+  {% include 'horizon/common/_sidebar.html' %}
+{% endblock %}
+
+{% block main %}
+    {% include "horizon/_messages.html" %}
+    {% include "cnext/account_name.html" %}
+    {% block cnext_main %}{% endblock %}
+{% endblock %}
+
+{% block js %}
+    {% include "cnext/_scripts.html" %}
+{% endblock %}
+

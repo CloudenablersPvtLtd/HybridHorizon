@@ -1,0 +1,49 @@
+{% load horizon i18n %}
+
+
+
+<div class='wrapper'>
+  <ul class="ac-menu">
+    {% for component in components %}
+      {% if user|has_permissions:component %}
+        <li {% if current.slug == component.slug %} class="ce-active"{% else %} class = "ce-inactive" {% endif %} id="{{ component.name }}">
+          <a href="{{ component.get_absolute_url }}" tabindex='1'>{{ component.name }}</a>
+          {% if current.slug == component.slug %}
+          		 {% if request.horizon.dashboard.supports_tenants %}
+          		 	 <div id="tenant_switcher" class="dropdown switcher_bar" tabindex="1">
+					    {% with num_of_tenants=cnext_tenants|length %}
+					      {% if num_of_tenants > 1 %}
+					        <a class="dropdown-toggle" data-toggle="dropdown" href="#tenant_switcher">
+					      {% endif %}
+					        <h4>{% trans "Current Project" %}</h4>
+					        <h3>{{ request.user.cnextname }}</h3>
+					      {% if num_of_tenants > 1 %}
+					      </a>
+					      {% endif %}
+					
+					      {% if num_of_tenants > 1 %}
+					        <ul id="tenant_list" class="dropdown-menu">
+						        <li class='divider'></li>
+						            {% for cnext_cloud in cnext_tenants%}
+							          	{% if cnext_cloud.cloud_meta.publickey != request.user.cnextpublickey %}
+							              <li><a href="{% url 'switch_cnext_tenants' cnext_cloud.id %}?next={{ request.horizon.dashboard.get_absolute_url }}">{{ cnext_cloud.name }}</a></li>
+							          	{%endif%}
+						            {% endfor %}
+						        </ul>
+					      {% endif %}
+					    {% endwith %}
+					  </div>
+                    {% endif %}
+				
+		 {% horizon_dashboard_nav %}
+		  {% endif %}
+		            
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+
+
+
+<!--initiate accordion-->

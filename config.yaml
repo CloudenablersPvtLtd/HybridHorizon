@@ -1,0 +1,6 @@
+﻿#YAML
+
+# Email specification for sending activation email. Give a valid gmail account.
+
+mail_id : notification@mail.com
+password: secret

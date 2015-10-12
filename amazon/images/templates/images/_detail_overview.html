@@ -1,0 +1,53 @@
+{% load i18n sizeformat %}
+
+<h3>{% trans "Image Overview" %}</h3>
+
+<div class="info row-fluid detail">
+  <h4>{% trans "Info" %}</h4>
+  <hr class="header_rule">
+  <table cellpadding="10" cellspacing="5">
+<tr>
+    <td><b>{% trans "Name" %}</b></td>
+    <td>{{ image.name|default:_("None") }}</td>
+    <td><b>{% trans "Description" %}</b></td>
+    <td>{{ image.description}}</td>
+    <td><b>{% trans "ID" %}</b></td>
+    <td>{{ image.id}}</td>
+</tr>
+<tr>
+    <td><b>{% trans "State" %}</b></td>
+    <td>{{ image.state }}</td>
+    <td><b>{% trans "Public" %}</b></td>
+    <td>{{ image.is_public }}</td>
+</tr>
+<tr>
+    <td><b>{% trans "Virtualization" %}</b></td>
+    <td>{{ image.virtualization_type }}</td>
+    <td><b>{% trans "Architecture" %}</b></td>
+    <td>{{ image.architecture }}</td>
+</tr>
+</table>
+</div>
+
+<div class="specs row-fluid detail">
+  <h4>{% trans "Custom Properties" %}</h4>
+  <hr class="header_rule">
+  <table cellpadding="10" cellspacing="5">
+  <tr>
+    <td><b>{% trans "Root Device Type" %}</b></td>
+    <td>{{ image.root_device_type }}</td>
+    <td><b>{% trans "Root Device Name" %}</b></td>
+    <td>{{ image.root_device_name }}</td>
+    <td><b>{% trans "Ramdisk ID" %}</b></td>
+    <td>{{ image.ramdisk_id }}</td>
+ </tr>
+ <tr>
+    <td><b>{% trans "Platform" %}</b></td>
+    <td>{{ image.platform}}</td>
+    <td><b>{% trans "Region" %}</b></td>
+    <td>{{ image.region.name}}</td>
+ </tr>
+ </table>
+</div>
+
+

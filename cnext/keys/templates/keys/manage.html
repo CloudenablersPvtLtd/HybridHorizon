@@ -1,0 +1,16 @@
+{% extends 'cnext/base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Keys" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Keys") %}
+{% endblock page_header %}
+
+{% block cnext_main %}
+<form method="post" action=".">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+</form>
+{% endblock %}
+
+

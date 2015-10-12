@@ -1,0 +1,8 @@
+{% block region_change %}
+<div class="region_change" style="height:30px;width:730px">
+<div class="display" style="height:30px;width:200px;float:left;">
+<p align="left" style = "color: #888888;">Current Region : <b>{{request.user.awsendpoint}}</b></p>
+</div>
+<a href="/amazon/region/region_change" title="Click to Switch Region">Change</a> 
+</div>
+{% endblock %}

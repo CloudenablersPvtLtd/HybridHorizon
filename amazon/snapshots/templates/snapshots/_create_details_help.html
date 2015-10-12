@@ -1,0 +1,8 @@
+{% load i18n %}
+
+{% block help_message %}
+    <h3>{% trans "Description" %}:</h3>
+    <p>{% trans "Select the EBS volume from which to create the snapshot." %}</p>
+    <p>{% trans "A description for the snapshot (limited to 255 characters)." %}</p>
+    <p>{%trans "A name for the snapshot (limited to 255 characters)." %}</p>
+{% endblock %}

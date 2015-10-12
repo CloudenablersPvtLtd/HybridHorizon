@@ -1,0 +1,17 @@
+{% extends 'wangle/base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Cloud" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Cloud") %}
+{% endblock page_header %}
+
+{% block wangle_main %}
+  <div class="addcloud">
+    {{ addcloud_table.render }}
+  </div>
+  <div class="myclouds">
+    {{ myclouds_table.render }}
+  </div>
+{% endblock %}
+

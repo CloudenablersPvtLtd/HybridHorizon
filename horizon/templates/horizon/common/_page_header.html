@@ -1,0 +1,7 @@
+{% load i18n %}
+{% block page_header %}
+  <h8 style= "color:#43A1D6;float:initial;up:22px">  Tenant Name: {{request.user.tenantid.name}} </h8>
+  <div class='page-header'>
+    <h2>{{ title }}</h2>
+  </div>
+{% endblock %}
