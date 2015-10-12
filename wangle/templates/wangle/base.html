@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block sidebar %}
+  {% include 'horizon/common/_sidebar.html' %}
+{% endblock %}
+
+{% block main %}
+    {% include "horizon/_messages.html" %}
+    {% block wangle_main %}{% endblock %}
+{% endblock %}
+
+{% block js %}
+    {% include "wangle/_scripts.html" %}
+{% endblock %}
+
+
+

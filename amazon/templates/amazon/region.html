@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Switch Region" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Switch Region") %}
+{% endblock page_header %}
+
+{% block main %}
+  {% include 'amazon/_region.html' %}
+{% endblock %}

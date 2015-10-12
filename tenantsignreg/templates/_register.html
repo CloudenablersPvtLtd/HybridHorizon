@@ -1,0 +1,21 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+{% load url from future %}
+{% block modal-header %}{% trans "Tenant SignUp" %}
+{% endblock %}
+{% block modal_class %}login{% endblock %}
+
+{% block form_action %}.{% endblock %}
+{% block form-method %}POST{% endblock %}
+
+{% block modal-footer %}
+<button   class="btn btn-primary pull-right" onclick="location.href='{% url 'splash' %}'">{% trans "Cancel" %} </button>
+<button class="btn btn-primary pull-right"> {% trans "Register" %}</button>
+{% endblock %}   
+      
+
+
+
+
+
+

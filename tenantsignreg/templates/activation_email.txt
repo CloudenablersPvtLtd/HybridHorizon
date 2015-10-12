@@ -1,0 +1,12 @@
+
+
+Dear {{ name }}
+
+Your activation key: {{ activation_key }}
+
+Please use this link to activate your account:
+
+{{ product_url }}/{{ activation_key }}/{{ name }}
+
+After activation you can login to the site:
+

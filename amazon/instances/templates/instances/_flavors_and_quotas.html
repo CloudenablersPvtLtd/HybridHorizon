@@ -1,0 +1,20 @@
+{% load i18n horizon humanize %}
+
+{% block help_message %}
+{% endblock %}
+
+<h4>{% trans "Flavor Details" %}</h4>
+<table class="flavor_table table-striped">
+  <tbody>
+    <tr><td class="flavor_name">{% trans "Name" %}</td><td><span id="flavor_name"></span></td></tr>
+    <tr><td class="flavor_name">{% trans "Architecture" %}</td><td><span id="flavor_arch"></span></td></tr>
+    <tr><td class="flavor_name">{% trans "Root Device Name" %}</td><td><span id="flavor_rdn"> </span> </td></tr>
+    <tr><td class="flavor_name">{% trans "Platform" %}</td><td><span id="flavor_platform"></span></td></tr>
+    <tr><td class="flavor_name">{% trans "Kernal ID" %}</td><td><span id="flavor_kernelid"></span></td></tr>
+    <tr><td class="flavor_name">{% trans "State" %}</td><td><span id="flavor_state"></span></td></tr>
+    <tr><td class="flavor_name">{% trans "Region" %}</td><td><span id="flavor_region"></span></td></tr>
+    <tr><td class="flavor_name">{% trans "Virtualization Type" %}</td><td><span id="flavor_virtualization_type"></span></td></tr>
+    <tr><td class="flavor_name">{% trans "Root Device Type" %}</td><td><span id="flavor_root_device_type"></span></td></tr>
+  </tbody>
+</table>
+

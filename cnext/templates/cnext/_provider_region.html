@@ -1,0 +1,20 @@
+{% block provider_region %}
+<div class = provider-region>
+Provider:
+<select id = "pro_filter">
+ <option data_provider = "All" value= "All" selected="selected">All</option>
+{% for i in title %}
+    <option data_provider = {{i.provider}} value={{i.provider}}> {{i.provider}}</option>
+{% endfor %}
+</select>
+Region:
+<select id = "reg_filter">
+<option data_provider = "All" value= "All">All</option>
+{% for i in title1 %}
+    <option data_provider = {{i.provider}} value={{i.name}}>{{i.name | title }}({{i.provider | title }})</option>
+{% endfor %}
+</select>
+</div>
+{% endblock %}
+
+

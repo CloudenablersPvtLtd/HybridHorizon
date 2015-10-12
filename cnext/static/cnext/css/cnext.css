@@ -1,0 +1,11 @@
+/* Additional CSS for cnext. */
+
+
+.modal.loadingss {
+    width: 150px;
+    height: 150px;
+    margin: 0px auto;
+    overflow: hidden;
+    background-image: url("/static/dashboard/img/cloud_anim2.gif");
+    background-size: cover;
+}

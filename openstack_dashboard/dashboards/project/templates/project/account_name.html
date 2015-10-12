@@ -1,0 +1,8 @@
+{% block account_change %}
+<div class="region_change" style="height:30px;width:730px">
+<div class="display" style="height:30px;width:200px;float:left;">
+<p align="left" style = "color: #888888;">Current Account : <b>{{request.user.openstackname}}</b></p>
+</div>
+<a href="/project/account/account_change" title="Click to Change Account">Change</a> 
+</div>
+{% endblock %}

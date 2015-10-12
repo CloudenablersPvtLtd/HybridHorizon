@@ -1,0 +1,37 @@
+{% load i18n sizeformat %}
+
+<h2><b>{% trans "Elastic IP Overview" %}</b></h2>
+
+<div class="data row-fluid detail">
+  <hr class="header_rule">
+  
+   <table cellpadding="25" cellspacing="10">
+    <tr>
+        <td><h4><b>{% trans "Public IP" %}</b></h4> </td>
+        <td>{{ elasticips.public_ip }}</td>
+
+        <td><h4><b>{% trans "Network Interface ID" %}</b></h4> </td>
+        <td>{{ elasticips.network_interface_id }}</td>
+    </tr>
+    <tr>
+        <td><h4><b>{% trans "Instance" %}</b></h4> </td>
+        <td>{{ elasticips.instance_id }}</td>
+
+        <td><h4><b>{% trans "Private IP Address" %}</b></h4> </td>
+        <td>{{ elasticips.private_ip_address }}</td>
+    </tr>
+    <tr>
+        <td><h4><b>{% trans "Scope" %}</b></h4> </td>
+        <td>{{ elasticips.domain }}</td>
+
+        <td><h4><b>{% trans "Network Interface Owner" %}</b></h4> </td>
+        <td>{{ elasticips.network_interface_owner_id }}</td>
+    </tr>
+    <tr>
+        <td><h4><b>{% trans "Allocation ID" %}</b></h4> </td>
+        <td>{{ elasticips.allocation_id }}</td>
+    </tr>
+    </table>
+</div>
+
+

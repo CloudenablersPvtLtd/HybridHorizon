@@ -1,0 +1,42 @@
+{% extends 'cnext/base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Instances" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Instances") %}
+{% endblock page_header %}
+
+{% block cnext_main %}
+<form method="POST" action="/anna">
+  <label for="id_customer">Providers:</label>
+  <select name="customer" id="id_customer">
+      <option value="" selected="selected">---------</option>
+      {% for provider_list in providers %}
+          <option value="">{{ provider_list}}</option>
+      {% endfor %} 
+  </select>
+ 
+</form>
+<form method="POST" action="/anna">
+  <label for="id_customer">Instances:</label>
+  <select name="customer" id="id_customer">
+      <option value="" selected="selected">---------</option>
+      {% for instances_list in instances %}
+          <option value="">{{ instances_list }}</option>
+      {% endfor %} 
+  </select>
+ 
+</form>
+<form method="POST" action="/anna">
+  <label for="id_customer">Images:</label>
+  <select name="customer" id="id_customer">
+      <option value="" selected="selected">---------</option>
+      {% for images_list in images %}
+          <option value="">{{ images_list }}</option>
+      {% endfor %} 
+  </select>
+ 
+</form>
+
+{% endblock %}
+

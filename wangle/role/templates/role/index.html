@@ -1,0 +1,13 @@
+{% extends 'wangle/base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Role" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Role") %}
+{% endblock page_header %}
+
+{% block wangle_main %}
+{{table.render}}
+{% endblock %}
+
+

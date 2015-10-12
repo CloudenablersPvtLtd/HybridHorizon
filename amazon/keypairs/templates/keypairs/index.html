@@ -1,0 +1,13 @@
+{% extends 'amazon/base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Keypairs" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Keypairs") %}
+{% endblock page_header %}
+
+{% block amazon_main %}
+ {{ table.render }}
+{% endblock %}
+
+

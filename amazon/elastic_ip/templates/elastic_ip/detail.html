@@ -1,0 +1,15 @@
+{% extends 'amazon/base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Elastic IP Details" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title="Elastic IP Details: "|add:elasticips.public_ip %}
+{% endblock page_header %}
+
+{% block main %}
+<div class="row-fluid">
+  <div class="span14">
+  {{ tab_group.render }}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block sidebar %}
+  {% include 'horizon/common/_sidebar.html' %}
+{% endblock %}
+
+{% block main %}
+    {% include "hpcloud/account_name.html" %}
+    {% block hpcloud_main %}{% endblock %}
+{% endblock %}

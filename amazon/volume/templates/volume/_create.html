@@ -1,0 +1,25 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block form_id %}attach_volume_form{% endblock %}
+{% block form_action %}{% url 'horizon:amazon:volume:attach' volume_id zone %}{% endblock %}
+
+{% block modal-header %}{% trans "Attach volume" %}{% endblock %}
+
+{% block modal-body %}
+<div class="left">
+    <fieldset>
+    {% include "horizon/common/_form_fields.html" %}
+    </fieldset>
+</div>
+<div class="right">
+    <h3>{% trans "Description" %}:</h3>
+    <h4>{% trans " Volume Attachment" %}</h4>	
+   <p>{% trans "Linux Devices: /dev/sdf through /dev/sdp " %}</p>
+</div>
+{% endblock %}
+{% block modal-footer %}
+  <input class="btn btn-primary pull-right" type="submit" value="{% trans "Attach Volume" %}" />
+  <a href="{% url 'horizon:amazon:volume:index' %}" class="btn secondary cancel close">{% trans "Cancel" %}</a>
+{% endblock %}

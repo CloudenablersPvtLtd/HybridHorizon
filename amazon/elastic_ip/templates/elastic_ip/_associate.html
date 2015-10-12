@@ -1,0 +1,23 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block form_id %}elastic_ip_associate_form{% endblock %}
+{% block form_action %}{% url 'horizon:amazon:elastic_ip:associate' id domain %}{% endblock %}
+
+{% block modal-header %}{% trans "Associate Address" %}{% endblock %}
+
+{% block modal-body %}
+<div>
+    <p>{% blocktrans %}Select the instance to which you wish to associate this IP address{% endblocktrans %}</p>
+    <fieldset>
+    {% include "horizon/common/_form_fields.html" %}
+    </fieldset>
+</div>
+{% endblock %}
+
+{% block modal-footer %}
+  <input class="btn btn-primary pull-right" type="submit" value="{% trans "Associate" %}"/>
+  <a href="{% url 'horizon:amazon:elastic_ip:index' %}" class="btn secondary cancel close">{% trans "Cancel" %}</a>
+{% endblock %}
+

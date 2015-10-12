@@ -1,0 +1,37 @@
+{% load i18n sizeformat %}
+
+<h2><b>{% trans "Security Groups Overview" %}</b></h2>
+
+<div class="data row-fluid detail">
+  <h3><b>{% trans "DATA" %}</b></h3>
+  <hr class="header_rule">
+  
+   <table cellpadding="15" cellspacing="10">
+    <tr>
+        <td><h4><b>{% trans "Name" %}</b></h4> </td>
+        <td>{{ securitygroups.name }}</td>
+        <td><h4><b>{% trans "Description" %}</b></h4> </td>
+        <td>{{ securitygroups.description }}</td>
+    </tr>
+    <tr>
+        <td><h4><b>{% trans "Group ID" %}</b></h4> </td>
+        <td>{{ securitygroups.id }}</td>
+        <td><h4><b>{% trans "Vpc ID" %}</b></h4> </td>
+        <td>{{ securitygroups.vpc_id }}</td>
+    </tr>
+    </table>
+    <table cellpadding="10" cellspacing="10">
+        <tr>
+        <td><h4><b>{%trans "Rules" %}</b></h4></td>
+        <td>
+           {% for rule in securitygroups.rules %}
+           		<tr><td><h5>{%trans "From Port: " %}</h5></td><td>{{rule.from_port}}</td>
+           		<td><h5>{%trans "To Port: " %}</h5></td><td>{{rule.to_port}}</td>
+           		<td><h5>{%trans "IP Protocol: " %}</h5></td><td>{{rule.ip_protocol}}</td>
+           		<td><h5>{%trans "Grants:" %}</h5></td><td>{{rule.grants}}</td>
+           		</tr>
+			{% endfor %}
+	</table>
+</div>
+
+

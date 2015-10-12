@@ -1,0 +1,27 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block form_id %}create_volume_form{% endblock %}
+{% block form_action %}{% url 'horizon:cnext:volume:create' %}{% endblock %}
+
+{% block modal-header %}{% trans "Create Volume" %}{% endblock %}
+
+{% block modal-body %}
+<div class="left">
+    <fieldset>
+    {% include "horizon/common/_form_fields.html" %}
+    </fieldset>
+</div>
+<div class="right">
+    <h3>{% trans "Description" %}:</h3>
+    <h4>{% trans "Volumes" %}:</h4>	
+    <p>{% trans "Volumes are allocated block storage resources that can be attached to instances as secondary storage or they can be used as the root store to boot instances. Volumes are persistent R/W Block Storage devices most commonly attached to the Compute node via iSCSI." %}</p>
+   
+</div>
+{% endblock %}
+
+{% block modal-footer %}
+  <input class="btn btn-primary pull-right" type="submit" value="{% trans "Create Volume" %}" />
+  <a href="{% url 'horizon:cnext:volume:index' %}" class="btn secondary cancel close">{% trans "Cancel" %}</a>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% load i18n sizeformat %}
+{% load url from future %}
+
+<h3>{% trans "Instance Overview" %}</h3>
+
+<div class="status row-fluid detail">
+  <h4>{% trans "Info" %}</h4>
+  <hr class="header_rule">
+  <table cellpadding="10" cellspacing="5">
+    <tr>
+        <td><b>{% trans "Name" %}</b> </td>
+        <td>{{ instance.tags.Name}}</td>
+         <td><b>{% trans "ID" %}</b></td>
+        <td>{{ instance.id }}</td>
+    </tr>
+    <tr>
+        <td><b>{% trans "Region" %}</b></td>
+        <td>{{ instance.region.name }}</td>
+        <td><b>{% trans "Status" %}</b></td>
+        <td>{{ instance.state}}</td>
+    </tr>
+    <tr>
+        <td><b>{% trans "Launch Time" %}</b></td>
+        <td>{{ instance.launch_time|parse_isotime }}</td>
+    </tr>
+  </table>
+</div>
+
+<div class="specs row-fluid detail">
+  <h4>{% trans "Specs" %}</h4>
+  <hr class="header_rule">
+  <table cellpadding="10" cellspacing="5">
+    <tr>
+        <td><b>{% trans "Instance Type" %}</b> </td>
+        <td>{{ instance.instance_type }}</td>
+        <td><b>{% trans "Image ID" %}</b></td>
+        <td>{{ instance.image_id}}</td>
+    </tr>
+    <tr>
+        <td><b>{% trans "Monitoring Status" %}</b></td>
+        <td>{{ instance.monitoring_state }}</td>
+        <td><b>{% trans "Ram Disk" %}</b></td>
+        <td>{{ instance.ramdisk }}</td>
+    </tr>
+    <tr>
+        <td><b>{% trans "Platorm" %}</b></td>
+        <td>{{ instance.platform }}</td>
+        <td><b>{% trans "Kernel ID" %}</b></td>
+        <td>{{ instance.kernel }}</td>
+    </tr>
+   </table>
+</div>
+
+<div class="addresses row-fluid detail">
+  <h4>{% trans "IP Addresses" %}</h4>
+  <table cellpadding="10" cellspacing="5">
+  <hr class="header_rule">
+     <tr>
+        <td><b>{% trans "Public IP Address" %}</b></td>
+        <td>{{instance.ip_address}}</td>
+        <td><b>{% trans "Private IP Address" %} </b></td>
+        <td>{{instance.private_ip_address}}</td>
+     </tr>
+     <tr>
+        <td><b>{% trans "Public DNS Name" %}</b></td>
+        <td>{{instance.public_dns_name}}</td>
+        <td><b>{% trans "Private DNS Name" %}</b></td>
+        <td>{{instance.private_dns_name}}</td>
+    </tr>
+  </table>
+</div>
+
+<div class="security_groups row-fluid detail">
+  <h4>{% trans "Security Groups And Keypair" %}</h4>
+  <table cellpadding="10" cellspacing="5">
+  <hr class="header_rule">
+     <tr>
+        <td><b>{% trans "Security Group ID" %}</b> </td>
+         {% for i in instance.groups %}
+        	<td>{{ i.name}}</td>
+         {%endfor%}
+    </tr>
+    <tr>
+        <td><b>{% trans "KeyPair Name" %}</b></td>
+        <td>{{ instance.key_name}}</td>
+    </tr>
+  </table>
+</div>
+
+
+
